@@ -1,9 +1,12 @@
-package mikecancode.ultimatetestapp;
+package mikecancode.ultimatetestapp.ImageViewPager;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import mikecancode.ultimatetestapp.R;
 
 public class ImageViewPagerActivity extends AppCompatActivity {
 
@@ -11,6 +14,10 @@ public class ImageViewPagerActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_image_view_pager);
+
+
+		ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+		viewPager.setAdapter(new CustomPagerAdapter(this));
 	}
 
 	@Override

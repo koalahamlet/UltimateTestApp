@@ -1,5 +1,6 @@
 package mikecancode.ultimatetestapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,6 +12,8 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnItemClick;
+import mikecancode.ultimatetestapp.ImageViewPager.ImageViewPagerActivity;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -54,5 +57,12 @@ public class IntroActivity extends AppCompatActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
+
+	@OnItemClick(R.id.listview)
+	void onItemClick(int position){
+		TestItem item = adapter.getItem(position);
+		Intent i = new Intent(this, item.getActivity().getClass());
+		startActivity(i);
+	}
 
 }

@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ImageViewPagerActivity"
+            android:name=".ImageViewPager.ImageViewPagerActivity"
             android:label="@string/title_activity_image_view_pager" >
         </activity>
     </application>

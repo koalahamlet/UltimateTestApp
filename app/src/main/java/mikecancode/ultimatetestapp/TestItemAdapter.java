@@ -1,7 +1,6 @@
 package mikecancode.ultimatetestapp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,18 +65,6 @@ public class TestItemAdapter extends ArrayAdapter<TestItem>{
 		}
 
 		viewHolder.textView.setText(item.getName());
-
-		viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(context, item.getActivity().getClass());
-				context.startActivity(i);
-			}
-		});
-
-
-		// Check if an existing view is being reused, otherwise inflate the view
-
 
 		return convertView;
 	}
