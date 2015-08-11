@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 /**
  * Created by koalahamlet on 8/10/15.
  */
-public class TestItemAdapter extends ArrayAdapter<TestItem>{
+public class ExampleItemAdapter extends ArrayAdapter<ExampleItem>{
 
 	Context context;
 
@@ -41,7 +41,7 @@ public class TestItemAdapter extends ArrayAdapter<TestItem>{
 	 *                 instantiating views.
 	 * @param objects  The objects to represent in the ListView.
 	 */
-	public TestItemAdapter(Context context, int resource, List<TestItem> objects) {
+	public ExampleItemAdapter(Context context, int resource, List<ExampleItem> objects) {
 		super(context, resource, objects);
 		this.context = context;
 	}
@@ -50,7 +50,7 @@ public class TestItemAdapter extends ArrayAdapter<TestItem>{
 	public View getView(int position, View convertView, ViewGroup parent) {
 
 		// get appropriate data
-		final TestItem item = getItem(position);
+		final ExampleItem item = getItem(position);
 
 		// Check if an existing view is being reused, otherwise inflate the view
 		final ViewHolder viewHolder;

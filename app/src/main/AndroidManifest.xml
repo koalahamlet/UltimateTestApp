@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mikecancode.ultimatetestapp" >
 
+    <!-- To access Google+ APIs: -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +22,14 @@
         <activity
             android:name=".ImageViewPager.ImageViewPagerActivity"
             android:label="@string/title_activity_image_view_pager" >
+        </activity>
+        <activity
+            android:name=".ListViewPager.ListViewPagerActivity"
+            android:label="@string/title_activity_list_view_pager" >
+        </activity>
+        <activity
+            android:name=".SlidingTabStrip.PagerSlidingTabStripActivity"
+            android:label="@string/title_activity_pager_sliding_tab_strip" >
         </activity>
     </application>
 

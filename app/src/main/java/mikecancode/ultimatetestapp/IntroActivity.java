@@ -14,13 +14,15 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnItemClick;
 import mikecancode.ultimatetestapp.ImageViewPager.ImageViewPagerActivity;
+import mikecancode.ultimatetestapp.ListViewPager.ListViewPagerActivity;
+import mikecancode.ultimatetestapp.SlidingTabStrip.PagerSlidingTabStripActivity;
 
 public class IntroActivity extends AppCompatActivity {
 
 	@Bind(R.id.listview)
 	ListView listView;
-	private TestItemAdapter adapter;
-	private List<TestItem> list;
+	private ExampleItemAdapter adapter;
+	private List<ExampleItem> list;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +30,14 @@ public class IntroActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_intro);
 		ButterKnife.bind(this);
 
-		list = new ArrayList<TestItem>();
-		list.add(new TestItem("Image Viewpager example", new ImageViewPagerActivity()));
-		adapter = new TestItemAdapter(this, R.layout.test_item_layout, list);
+		list = new ArrayList<ExampleItem>();
+
+		list.add(new ExampleItem("Image Viewpager example", new ImageViewPagerActivity()));
+		list.add(new ExampleItem("List Viewpager example", new ListViewPagerActivity()));
+		list.add(new ExampleItem("Sliding TabStrip example", new PagerSlidingTabStripActivity()));
+
+
+		adapter = new ExampleItemAdapter(this, R.layout.test_item_layout, list);
 		listView.setAdapter(adapter);
 
 	}
@@ -60,7 +67,7 @@ public class IntroActivity extends AppCompatActivity {
 
 	@OnItemClick(R.id.listview)
 	void onItemClick(int position){
-		TestItem item = adapter.getItem(position);
+		ExampleItem item = adapter.getItem(position);
 		Intent i = new Intent(this, item.getActivity().getClass());
 		startActivity(i);
 	}
