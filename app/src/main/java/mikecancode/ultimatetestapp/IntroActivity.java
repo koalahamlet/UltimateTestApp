@@ -16,6 +16,7 @@ import butterknife.OnItemClick;
 import mikecancode.ultimatetestapp.ImageViewPager.ImageViewPagerActivity;
 import mikecancode.ultimatetestapp.ListViewPager.ListViewPagerActivity;
 import mikecancode.ultimatetestapp.SlidingTabStrip.PagerSlidingTabStripActivity;
+import mikecancode.ultimatetestapp.VanillaEditText.EditTextActivity;
 
 public class IntroActivity extends AppCompatActivity {
 
@@ -34,8 +35,8 @@ public class IntroActivity extends AppCompatActivity {
 
 		list.add(new ExampleItem("Image Viewpager example", new ImageViewPagerActivity()));
 		list.add(new ExampleItem("List Viewpager example", new ListViewPagerActivity()));
-		list.add(new ExampleItem("Sliding TabStrip example", new PagerSlidingTabStripActivity()));
-
+		list.add(new ExampleItem("Sliding TabStrip example (currently broken)", new PagerSlidingTabStripActivity()));
+		list.add(new ExampleItem("Vanilla EditText(for testing focus)", new EditTextActivity()));
 
 		adapter = new ExampleItemAdapter(this, R.layout.test_item_layout, list);
 		listView.setAdapter(adapter);
